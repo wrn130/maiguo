@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script>
+			window.onload=function(){
+				var oChange=document.getElementById("change");
+				var oInput=document.getElementsByTagName("input");
+				var onOff=true;
+				oChange.onclick=function(){
+					var oImg=oChange.getElementsByTagName("img")[0];
+					if(onOff){
+						oImg.setAttribute("src","images/invoice_yuan_03.jpg");
+					}else{
+						oImg.setAttribute("src","images/adress_dj_03.png");
+					}
+					onOff=!onOff;
+				}
+				for(var i=0;i<oInput.length;i++){
+					oInput[i].onblur=function(){
+						var oInputVal=this.value;
+						if(oInputVal==""){
+							this.nextElementSibling.innerHTML="不能为空";
+							this.nextElementSibling.style.color="red";
+							this.nextElementSibling.style.fontSize="0.3rem";
+						}else{
+							this.nextElementSibling.innerHTML="";
+						}
+					}
+					oInput[i].onfocus=function(){
+						this.nextElementSibling.innerHTML="";
+					}
+					oInput[1].onblur=function(){
+						if(isNaN(this.value)==false&&this.value.length==11){
+							this.nextElementSibling.innerHTML="";
+						}else{
+							this.nextElementSibling.innerHTML="格式错误";
+							this.nextElementSibling.style.color="red";
+							this.nextElementSibling.style.fontSize="0.1rem";
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+		<body>
+		<section class="header">
+			<div class="inner">
+				<a href="fillin.html" class="back">返回</a>
+			    <h2>新建地址</h2>
+			    <a href="#" class="set"><img src="images/pay_img_06.png"></a>
+			</div>
+		</section>
+		<section class="adress">
+			<div class="inner">
+				<ul>
+					<li>收货人：<input type="text" value="王鹏"/><span></span></li>
+					<li>联系方式：<input type="tel" /><span></span></li>
+					<li class="area"><a href="#">所在地区：<input type="text" placeholder="内蒙古呼和浩特市" /><span></span></a></li>
+					<li>详细地址：<input type="text"><span></span></li>
+				</ul>
+				<div class="detail">
+				    <h6><a href="#" id="change"><img src="images/adress_dj_03.png"></a>设为默认地址</h6>
+				</div>
+				<a href="fillin2.html" class="keep">保存</a>
+			</div>
+		</section>
+	</body>
+</html>

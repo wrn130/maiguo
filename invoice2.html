@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发票</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<script>
+		window.onload=function(){
+			var ostatement=document.getElementsByClassName("statement")[0];
+	        var onOff=true;
+	        ostatement.onclick=function(){
+				if(onOff){
+					ostatement.style.backgroundImage="url(images/invoice_yuan_03.jpg)";
+				}else{
+					ostatement.style.backgroundImage="url(images/adress_dj_03.png)";
+				}
+				onOff=!onOff;
+			}
+		}
+	</script>
+	<body>
+		<section class="header">
+			<div class="inner">
+				<a href="fillin2.html" class="back">返回</a>
+			    <h2>商品详情</h2>
+			    <a href="#" class="set"><img src="images/pay_img_06.png"></a>
+			</div>
+		</section>
+		<section class="invoice">
+			<div class="inner">
+				<h4>发票抬头</h4>
+				<ul>
+					<li class="person">个人</li>
+					<li>单位</li>
+				</ul>
+				<input type="text" value="名气家（苏州）有限公司">
+			</div>
+			<span class="empty"></span>
+			<div class="inner">
+				<h4>发票内容</h4>
+				<a href="#" class="statement">明细</a>
+			</div>
+			<div class="footer">
+				<div class="inner">
+					<a href="fillin2.html" class="sure">确定</a>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

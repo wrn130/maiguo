@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/base_w.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <script src="js/base.js"></script>
+    <style>
+        .banner img{width: 100%;}
+        .banner div{padding: 15px 4.6% 0 4.6%;}
+        .banner p{font-size: 2rem;line-height: 22px;margin-bottom: 10px;}
+        .banner span{font-size: 1.4rem;display: block;line-height: 22px;letter-spacing: 1px;margin-bottom: 10px;}
+        .banner div i{line-height: 25px;font-size: 2.6rem;margin-right: 2%;}
+        .banner div del{font-size: 1.8rem;}
+        .banner div a{display: block;width: 100%;text-align: center;background-color: #f39900;line-height: 35px;color: #fff;font-size: 1.8rem;
+            margin-top: 11px;}
+        .zf{height: 100%;display: none;position: fixed;bottom: 0;left: 0;width: 100%;}
+        .yy{height: 30%;background-color: rgba(0,0,0,0.5);width: 100%;}
+        .introduce{text-align: center;margin-top: 2rem}
+        .introduce ul li{height: 3.2rem;border-bottom: 1px dotted #989898;line-height: 3.2rem;text-align: left;}
+        .introduce ul li p{font-size: 1.35rem;color: #9a9a9a;}
+        .introduce ul li span{color: #333;margin-left: 15.1%;}
+        .introduce .warm{width: 6.7%;height: 2.15rem;border: 1px solid #c97a78;border-radius: 50%;display: block;text-align: center;line-height: 2.15rem;margin: 1.2rem 0 1.8rem 43.4%;}
+        .introduce p{font-size: 1.2rem;color: #929292;margin-bottom: 1.2rem;}
+        .introduce .last{color: #b94c4a;}
+        .img{width: 100%;margin-bottom: 1rem;}
+        .buy{height: 3.5rem;width: 100%;background-color: #f39801;color: #fff;font-size: 1.5rem;display: block;line-height: 3.5rem;text-align: center;margin-bottom:2.2rem}
+        .register{background-color: #fff;width: 100%;height: 60%;display: none;}
+        .register ul li{border-bottom: 1px solid #F3F3F3;line-height: 5.45rem;overflow: hidden;}
+        .register ul li input{line-height: 5.45rem;color: #999999;}
+        .register ul li:nth-child(2) input{width: 32.5%;float: left;}
+        .register ul li:nth-child(2) a{display: block;width: 30%;height: 3rem;border: 1px solid #ccc;text-align: center;line-height: 3rem;margin-top: 1.2rem;color: #666666;border-radius: 5px;}
+        .register ul li span{width: 25%;text-align: center;color: #333333;}
+        .register{background-color: #fff;width: 100%;height: 70%;}
+        .apply{height: 70%;/*display: none;*/background-color: #fff;}
+        .apply .pro{height: 8.8rem;padding-top: 1.6rem;}
+        .pro_top{height:7.4rem;}
+		.apply .pro img{width: 25%;height:7.4rem;float: left;margin-right: 6%;}
+		.apply .pro h6{width: 56.1%;color: #333;font-size: 1.4rem;line-height: 2rem;float: left;margin-right: 4%;}
+		.apply .pro span{font-size: 1.4rem;color: #fe5957;display: block;line-height: 3rem;}
+		.apply .pro i{font-size: 1.4rem;color: #333;line-height: 2rem;margin-top: 0.6rem;display: block;}
+		.apply .pro p{font-size: 1.3rem;color: #999;margin-top: 2.1rem;}
+		.apply h4{font-size: 1.5rem;color: #333;line-height: 3.45rem;}
+		.apply ul li{width: 32.1%;height: 3.5rem;float: left;margin: 0 1.4% 0.95rem 1.4%;text-align: center;color: #333333;}
+		.apply ul li:nth-child(3){margin-bottom: 0;}
+        .apply ul li:nth-child(1) a{color: #cccccc;border: 1px solid #ccc;}
+		.apply ul li a{border: 1px solid #666;color: #333;font-size: 1.5rem;line-height: 3.5rem;display: block;border-radius: 3px;}
+		.sel:hover{color: #f39801;border: 1px solid #f39801;}
+		.operation{height:3.4rem;text-align: center;margin-bottom: 1.3rem;}
+        .operation input{width: 17.1%;float: left;height: 3.4rem;border: 1px solid #333;text-align: center;}
+       .operation a{width: 13.2%;height: 3.4rem;border-top: 1px solid #ccc;border-left: 1px solid #ccc;border-bottom: 1px solid #ccc;display: block; float: left;line-height: 3.5rem;}
+       .operation a:nth-of-type(2){border-left: none;border-right: 1px solid #ccc;}
+    </style>
+   <script>
+       window.onload=function(){
+           var obuy=document.getElementById("buy");
+           var apply=document.getElementById("apply");
+           var buy3=document.getElementById("buy3");
+           var register=document.getElementById("register");
+           obuy.onclick=function(){
+               var zf=document.getElementsByClassName("zf")[0];
+               zf.style.display="block";
+               buy3.onclick= function () {
+                   register.style.display="block"
+               };
+               var yy=document.getElementsByClassName("yy")[0];
+               yy.onclick= function () {
+                   zf.style.display="none";
+               };
+               var otel=document.getElementById("tel");
+               var telVal;
+               var ocode=document.getElementById("code");
+               var codeVal=ocode.value;
+               otel.onblur=function(){
+                   telVal=otel.value;
+                   if(telVal!=""&&telVal.length==11){
+                       if(checkPhone(telVal)){
+                           this.nextElementSibling.innerText="正确";this.nextElementSibling.style.color="darkcyan"
+                       }else{
+                           this.nextElementSibling.innerText="错误";this.nextElementSibling.style.color="red"
+                       }
+                   }else{this.nextElementSibling.innerText="错误";this.nextElementSibling.style.color="red"}
+               }
+
+           };
+//            var sel=document.getElementsByClassName("sel");
+//             for(var i=0;i<sel.length;i++){
+//                 if(this.)
+//             }
+           //购物车数量的加减
+           var operation=document.getElementsByClassName("operation")[0].getElementsByTagName("a");
+           modified(operation);
+
+
+           fanhui(document.getElementsByClassName("return")[0]);
+
+           var code=document.getElementById("code");
+           var off=true;
+           code.onclick=function(){
+               if(off){
+                   off=!off;
+                   var jishu=60;
+                   var jieshi=setInterval(function(){
+                       if(jishu==0){
+                           code.innerHTML="重新发送";
+                           off=!off;
+                           clearInterval(jieshi);
+                       }else{
+                           code.innerHTML=jishu+"s";
+                           jishu--;
+                       }
+                   },1000)
+               }
+
+           }
+       }
+    </script>
+</head>
+<body>
+<section class="header">
+    <h2> <a href="shou.html" class="return">返回</a>
+    商品详情
+    <a href="#" class="menu"><img src="images/pay_img_06.png"></a></h2>
+</section>
+<section class="banner">
+<img src="images/producd_bg_02.png">
+    <div>
+        <p>大剧院医用不锈钢三层钢煮食套装(煎煮锅/单柄锅/双耳汤煲)</p>
+        <span>专利技术的抗锈耐刮易洁表面镀膜精心做工处理，不含化学图层</span>
+        <i>￥316.00</i><del>市场价:￥598.00</del>
+    </div>
+</section>
+<section class="dibu">
+    <img src="images/di_pic_03.png">
+</section>
+
+
+<section class="introduce">
+    <div class="inner">
+        <ul>
+            <li>
+                <p>品名<span>三层钢单柄煲</span></p>
+            </li>
+            <li>
+                <p>材质<span>医用不锈钢</span></p>
+            </li>
+            <li>
+                <p>重量<span>3.2KG</span></p>
+            </li>
+            <li>
+                <p>尺寸<span>18CM</span></p>
+            </li>
+            <li>
+                <p>颜色<span>颜色</span></p>
+            </li>
+        </ul>
+        <span class="warm">暖</span>
+        <p>火锅和感情不一样，</p>
+        <p>感情拥有朱砂痣就不能要白月光，</p>
+        <p>火锅可以取红汤也可以尝清汤，</p>
+        <p class="last">食料烫涮，随人心意。</p>
+        <img src="images/pro_img_03.jpg" class="img">
+        <a href="javascript:void(0)" class="buy" id="buy">立即购买</a>
+    </div>
+</section>
+<section class="zf">
+    <div class="yy"></div>
+    <div class="register" id="register">
+        <ul class="inner">
+            <li><span class="fl">+86</span><input type="tel" class="fl"  id="tel" placeholder="请输入手机号" value=""><i></i></li>
+            <li><span class="fl">验证码</span><input type="tel" value="" class="fl"placeholder="请输入验证码"><a href="#" class="fr" id="code">获取验证码</a></li>
+            <li><a href="fillin.html" class="buy" id="buy_2">立即注册</a></li>
+        </ul>
+    </div>
+   <div class="apply" id="apply">
+    	<div class="pro">
+    		<div class="inner">
+                <div class="pro_top">
+    			<img src="images/pot_03.png">
+				<h6>大剧院医用不锈钢三层钢煮食套装(煎煮锅/单柄锅/双耳汤煲)</h6>
+                    <span class="fl">￥316.00</span>
+                </div>
+				<h4>规格</h4>
+				<ul>
+					<li><a href="#">18cm 单柄煲</a></li>
+					<li><a href="#" class="sel">22cm 单柄煲</a></li>
+					<li><a href="#" class="sel">18cm 单柄煲</a></li>
+				</ul>
+				 <div class="clear"></div>
+				<h4>数量</h4>
+				<div class="operation">
+					<a href="#">-</a>
+					<input type="text" value="1"/>
+					<a href="#">+</a>
+				</div>
+				<div class="clear"></div>
+				 <a href="javascript:void(0)" class="buy" id="buy3">立即购买</a>
+    		</div>
+    </div>
+    </div>
+</section>
+ 
+</body>
+</html>

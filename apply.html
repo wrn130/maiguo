@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>售后申请</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/base.js"></script>
+	</head>
+	<script>
+		window.onload= function () {
+			var operation=document.getElementById("num").getElementsByTagName("a");
+			modified(operation);
+		}
+
+	</script>
+	<body>
+		<section class="header">
+			<div class="inner">
+				<a href="shou.html" class="back">返回</a>
+			    <h2>售后申请</h2>
+			    <a href="#" class="set"><img src="images/pay_img_06.png"></a>
+			</div>
+		</section>
+		<section class="apply">
+				<div class="pro">
+					<div class="inner">
+						<img src="images/myorder_g_03.jpg">
+					    <h6>大剧院系列三层钢煮食套装，24cm煎煮锅...</h6>
+					    <span>￥316.00</span>
+					    <i>x1</i>
+					    <p>天蓝色</p>
+					</div>
+				</div>
+				<div class="number">
+					<div class="inner">
+						<div class="txt">
+							<h5>申请数量</h5>
+						    <p>最大申请数量为1</p>
+						</div>
+						<div class="num" id="num">
+							<a href="#">-</a>
+						    <input type="text" value="1"/>
+						    <a href="#">+</a>
+						</div>
+						<div class="clear"></div>
+						<div class="products">
+							<a href="#">退货</a>
+						    <a href="#">换货</a>
+						    <div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				<div class="problem">
+					<div class="inner">
+						<textarea>请您详细描述问题（最多100字）</textarea>
+						<div class="file"><input type="file"/></div>
+						<p>最多上传3张照片，每张不超过5M，支持JPG,BMP,PNG</p>
+					</div>
+				</div>
+				<div class="inner">
+					<a href="#" class="submit">提交</a>
+				</div>
+		</section>
+	</body>
+</html>

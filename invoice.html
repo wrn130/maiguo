@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地址管理默认地址</title>
+    <link rel="stylesheet" href="css/base_w.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        .main{background-color: #fff;}
+        .main ul{background-color: #f3f3f3;}
+        .main ul li{border-bottom: 1px solid #f3f3f3;background-color: #fff;overflow: hidden;padding-left: 4.6%;}
+        .default .default_1,.default .default_2{display:block;font-size: 1.8rem;padding: 1.5rem 0 1.5rem 0;}
+        .default .default_1 span,.default .default_2 span{line-height: 3rem}
+        .default .default_1 a{display:block;width:3rem;height: 3rem;background: url("images/ico_01.png") no-repeat 0 -90px;}
+        .default .default_2 a{display:block;width:4rem;height: 3rem;background: url("images/ico_01.png") no-repeat 0 -208px;float: left;padding-left: 3rem}
+        .default .default_2 a:last-child{background: url("images/ico_01.png") no-repeat 0 -148px;}
+        .default{margin-bottom: 2rem}
+        #pitch .default_1 a{background: url("images/ico_01.png") no-repeat 0 -30px;}
+        .default .default_2 span{color: #666;}
+    </style>
+    <script>
+          window.onload= function () {
+                 var defaultSite=document.getElementsByClassName("defaultSite");
+                 var odelete=document.getElementsByClassName("delete");
+             for(var i=0;i<defaultSite.length;i++){
+                 defaultSite[i].onclick= function () {
+                     for(var k=0;k<defaultSite.length;k++){
+                         defaultSite[k].style.backgroundPositionY=-90+"px" ;
+                     }
+                     this.style.backgroundPositionY=-30+"px" ;
+
+                 }
+             }
+              for(var i=0;i<odelete.length;i++){
+                  odelete[i].onclick=function(){
+                      this.parentElement.parentElement.previousElementSibling.remove();
+                      this.parentElement.parentElement.remove();
+                  }
+              }
+          }
+
+    </script>
+</head>
+<body>
+<section class="header">
+    <h2><a href="shou.html" class="return">返回</a>
+        地址管理
+        <a href="#" class="menu"><img src="images/pay_img_06.png"></a></h2>
+</section>
+<section class="main">
+<ul>
+    <li class="personal lis">
+        <i class="name">董晓宁</i>
+        <i class="tel">18588888888</i>
+        <p>江苏省苏州市工业园区通原路669号，港华大厦902室</p>
+    </li>
+    <li class="default" id="pitch">
+        <div class="default_1 fl">
+            <a href="#" class="defaultSite fl" ></a>
+            <span class="fl">默认地址</span>
+        </div>
+        <div class="default_2 fr">
+            <a href="#"><span>编辑</span></a>
+            <a href="#" class="delete"><span>删除</span></a>
+        </div>
+    </li>
+
+
+    <li class="personal lis">
+        <i class="name">董晓宁</i>
+        <i class="tel">18588888888</i>
+        <p>江苏省苏州市工业园区通原路669号，港华大厦902室</p>
+    </li>
+    <li class="default">
+        <span class="default_1 fl">
+            <a href="#" class="defaultSite fl"></a>
+            <span class="fl">默认地址</span>
+        </span>
+        <span class="default_2 fr">
+            <a href="#"><span>编辑</span></a>
+            <a href="#" class="delete"><span>删除</span></a>
+        </span>
+    </li>
+
+
+
+    <li class="personal lis">
+        <i class="name">董晓宁</i>
+        <i class="tel">18588888888</i>
+        <p>江苏省苏州市工业园区通原路669号，港华大厦902室</p>
+    </li>
+    <li class="default">
+        <span class="default_1 fl">
+            <a href="#" class="defaultSite fl"></a>
+            <span class="fl">默认地址</span>
+        </span>
+        <span class="default_2 fr">
+            <a href="#"><span>编辑</span></a>
+            <a href="#"  class="delete"><span>删除</span></a>
+        </span>
+    </li>
+</ul>
+</section>
+</body>
+</html>

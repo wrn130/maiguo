@@ -1,0 +1,59 @@
+/*重置样式*/
+body,ul,li,a,h1,h2,h3,h4,h5,h6,input,td,ol,p,tr,textarea,label{margin: 0;padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+input{outline: none;}
+textarea{resize: none;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+img,input{border:none;}
+i,em{font-style: normal;}
+.fl{float: left;}
+.fr{float: right;}
+.clear{clear: both;}
+html{font: 62.5% "微软雅黑";}
+/*共有样式*/
+/*头部*/
+.inner{width: 92.5%;margin: 0 auto;}
+.header{height:4.25rem;background-color: #1a1b1f;line-height: 4.25rem;color: #fff;width: 100%;}
+.header h2{font-size: 1.8rem;float: left;text-align: center;width:93.7%;padding: 0 3.4%;font-weight: 600}
+.header a{display: block;color: #fff;}
+.header .return{float: left;font-size: 1.6rem;background: url("../images/pay_img_03.png") no-repeat left center;background-size: 1.1rem;padding-left: 4.7%;}
+.header .menu{float: right;width: 6.7%;}
+.header .menu img{width: 100%;}
+/*dizhi*/
+.personal i{line-height: 26px;font-size: 1.8rem;font-weight: bold;}
+.personal i:first-child{margin-right: 8.9%;}
+.personal{padding: 9px 4.6%;line-height: 3.1rem}
+.personal p{font-size: 1.8rem;color: #666;line-height: 2.1rem}
+
+/*底部区域*/
+.footer{position: fixed;bottom: 0;left: 0;height: 50px;width: 100%;padding: 7px 4.6%;background-color: #fff;}
+.footer a{display: block;float: left;width:43.1%;margin-right: 4%;text-align: center;font-size: 1.8rem;padding:11px 0;}
+.footer .payment{background-color: #f39801;color: #fff;}
+.footer .again{width: 90%;background-color: #f39801;color: #fff;margin-bottom: 3rem;}
+.footer .cloo{border:1px solid #999999;color: #999999;}
+.dibu{background-color: #282828;width: 100%;height: 20px;line-height: 20px;position: fixed;bottom: 0;left: 0;}
+.dibu img{height: 13px;margin-left: 1.8%;}
+/*订单详情*/
+.indent{background-color: #f3f3f3;width: 100%;overflow: hidden}
+.indent ul li{background: #ffffff;border-bottom: 1px solid #dcdcdc;}
+.lis{width: 90.6%;padding:0 4.6%;overflow: hidden;}
+.indent_1{line-height: 48px;font-size: 1.8rem;}
+.indent_1 p{float: left;color: #999;}
+.indent{margin-bottom: 50px;}
+.indent ul .di{background-color: #F3F3F3;height: 10px;width: 100%;}
+.indent ul .mb{height: 3px;width: 100%;background: url("../images/mail_colour.png");}
+/*订单部分*/
+.indent ul .commodity{padding: 3rem 4.6% 2rem 4.6%;}
+.commodity img{width: 23.1%;float: left;margin-right: 2.6%;}
+.commodity div{float: left;width: 74.1%;font-size: 1.6rem}
+.commodity div p{line-height: 20px;}
+.commodity div h4{color: #9a9a9a;line-height: 20px;}
+.commodity div span{color: #ff4543;}
+.commodity div span i{color: #999;float: right;}
+.invoice{color: #999;line-height: 45px;font-size: 1.8rem}
+.invoice a{float: right;color: #333333;}
+.calculate{padding: 11px 4.6% 11px 4.6%;line-height: 22px;color: #999;font-size: 1.8rem}
+.calculate i{float: right;color:#ff4543}
+.sfk{line-height: 4.5rem;font-size: 1.8rem;color: #999;}
+.sfk i{float:right;color: #ff4543}

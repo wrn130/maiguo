@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单填写带地址</title>
+    <link rel="stylesheet" href="css/base_w.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        .indent{background-color: #f3f3f3;width: 100%;overflow: hidden}
+        .indent ul li{background: #ffffff;border-bottom: 1px solid #dcdcdc;}
+        .lis{width: 90.6%;padding:0 4.6%;overflow: hidden;}
+
+        .indent ul .di{background-color: #f3f3f3;height: 10px;width: 100%;}
+        .indent ul .mb{height: 3px;width: 100%;background: url("images/mail_colour.png");}
+  /*新建地址*/
+
+
+        .indent ul .commodity{padding: 3rem 4.6% 2rem 4.6%;}
+        .commodity img{width: 23.1%;float: left;margin-right: 2.6%;}
+        .commodity div{float: left;width: 74.1%;font-size: 1.6rem}
+        .commodity div p{line-height: 20px;}
+        .commodity div h4{color: #9a9a9a;line-height: 20px;}
+        .commodity div span{color: #ff4543;}
+        .commodity div span i{color: #999;float: right;}
+        .invoice{color: #999;line-height: 45px;font-size: 1.8rem}
+        .invoice a{float: right;color: #333333;}
+        .calculate{padding: 11px 4.6% 11px 4.6%;line-height: 22px;color: #999;font-size: 1.8rem}
+        .calculate i{float: right;color:#ff4543}
+        .sfk{line-height: 45px;font-size: 1.8rem;color: #999;}
+        .sfk i{float:right;color: #ff4543}
+
+        .personal2 i{line-height: 26px;font-size: 1.8rem;font-weight: bold;}
+        .personal2 i:first-child{margin-right: 8.9%;}
+        .personal2{padding: 9px 4.6%;}
+        .personal2 .dfad{line-height: 1.3rem;font-size: 1rem;border: 1px solid #f19a00;padding: 4px 1%;border-radius: 4px;color: #f19a00;float: left;margin-right: 8.9%;}
+        .personal2 p{line-height: 19px;font-size: 1.8rem;color: #666;width: 56.8%;float: left;}
+        .select{font-size: 2rem;float: right;color: #000000;}
+    </style>
+</head>
+<body>
+<section class="header">
+    <h2><a href="shou.html" class="return">返回</a>
+        订单填写
+        <a href="#" class="menu"><img src="images/pay_img_06.png"></a></h2>
+</section>
+<section class="indent">
+    <ul>
+        <li class="mb"></li>
+        <li class="personal2 lis">
+            <i>董晓宁</i><i>15888888888</i><br>
+            <a href="#" class="dfad">默认地址</a>
+            <p>江苏省苏州市工业园区通园路699号，港华大厦902室</p>
+           <a href="invoice.html" class="select"> >  </a>
+        </li>
+        <li class="di"></li>
+        <li class="commodity lis"><img src="images/pot_03.png">
+            <div>
+                <p>大剧院医用不锈钢三层钢煮食套装(煎煮锅/单柄锅/双耳汤煲)</p>
+                <h4>天蓝色</h4>
+                <span>￥316.00<i>x1</i></span>
+            </div>
+        </li>
+        <li class="invoice lis">发票信息<a href="invoice2.html">个人 ></a> </li>
+        <li class="di"></li>
+        <li class="calculate">
+            <p>商品金额<i>￥316.00</i></p>
+            <p>运费<i>+ 0.00</i></p>
+        </li>
+        <li class="sfk lis">实付款<i>￥316.00</i></li>
+        <li class="di"></li>
+    </ul>
+</section>
+<section class="footer">
+    <a href="pay.html" class="payment">立即支付</a>
+    <a href="canceled.html" class="cloo">取消订单</a>
+</section>
+</body>
+</html>
